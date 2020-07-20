@@ -31,13 +31,7 @@ class Song
 
   def self.find_by_name(name)
     correct_song = nil
-    self.all.each do |song|
-      if song.name == name
-        correct_song = song
-      else
-        false
-      end
-    end
+    self.all.each{|song| song.name == name ? correct_song = song : false}
     correct_song
   end
 
